@@ -6,9 +6,9 @@ const userSchema = new mongoose.Schema({
     required: true,
   },
   imageUrl: {
-    type: Boolean,
-    default: false,
-  },
+    type: String,
+    required: true,
+  },  
   clerkId: {
     type: String,
     required: true,
