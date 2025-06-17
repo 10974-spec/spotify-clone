@@ -7,7 +7,7 @@ const router = Router();
 router.use(protectRoute, requireAdmin);
 
 
-router.get("/check",checkAdmin)
+router.get("/check",checkAdmin);
 
 router.post("/songs",createSong);
 router.post("/albums",createAlbum);
