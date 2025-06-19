@@ -1,3 +1,4 @@
+import PlaylistSkeleton from "@/components/skeletons/PlaylistSkeleton";
 import { buttonVariants } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
@@ -6,6 +7,9 @@ import { HomeIcon, Library, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const LeftSidebar = () => {
+
+    const isLoading = true;
+
   return (
     <div className="h-full flex flex-col gap-2">
       {/* ===NAVIGATION MENU=== */}
@@ -52,8 +56,10 @@ const LeftSidebar = () => {
             <span className="hidden md:inline">Playlists</span>
           </div>
         </div>
-        <ScrollArea>
-
+        <ScrollArea className="h-[calc(100vh - 300px)]">
+              <div className="space-y-2">
+                {isLoading? (<PlaylistSkeleton/>) : ()}
+              </div>
         </ScrollArea>
       </div>
     </div>
