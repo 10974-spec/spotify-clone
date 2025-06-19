@@ -10,7 +10,7 @@ const songSchema = new mongoose.Schema({
     required: true,
   },
   imageUrl: {
-    type: Boolean,
+    type: String,
     default: false,
   },
   audioUrl: {
