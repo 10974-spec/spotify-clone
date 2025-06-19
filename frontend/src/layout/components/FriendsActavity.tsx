@@ -46,6 +46,18 @@ const FriendsActavity = () => {
                             <span className="font-medium text-sm text-white">{user.fullName}</span>
                             {isPlaying && <Music className="size-3.5 text-emerald-400 shrink-0"/>}
                          </div>
+                         {isPlaying ? (
+                            <div className="mt-1">
+                                <div className="mt-1 text-sm text-white font-medium truncate">
+                                Cardigan
+                                </div>
+                                <div className="text-sm text-zinc-400 truncate">
+                                   by The Kid LAROI
+                                </div>
+                            </div>
+                         ) : (
+                            <div className="mt-1 text-xs text-zinc-400">Idle</div>
+                         )}
                     </div>
                 </div>
             </div>
