@@ -22,7 +22,7 @@ const AlbumPage = () => {
  if(isLoading) return null
 
   return  <div className="h-full">
-    <ScrollArea className="h-full">
+    <ScrollArea className="h-full rounded-md">
  {/* ====MAIN CONTENT===== */}
  <div className="relative min-h-full">
   {/* ====BG GRADIENT===== */}
