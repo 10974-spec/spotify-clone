@@ -1,8 +1,34 @@
-import Topbar from "@/components/ui/Topbar"
-
+import Topbar from "@/components/ui/Topbar";
+import { useMusicStore } from "@/stores/useMusicStore";
+import { useEffect } from "react";
+import FeaturedSection from "./components/FeaturedSection";
 
 const HomePage = () => {
-  return <div className="rounded-md overflow-hidden"><Topbar/></div>
-}
+  const {
+    fetchFeaturedSongs,
+    fetchMadeForYouSongs,
+    fetchTrendingSongs,
+    isLoading,
+    madeForYouSongs,
+    trendingSongs,
+    featuredSongs,
+  } = useMusicStore();
 
-export default HomePage
+  useEffect(() => {
+    fetchTrendingSongs()
+    fetchMadeForYouSongs()
+    fetchFeaturedSongs()
+  }, [fetchFeaturedSongs, fetchMadeForYouSongs, fetchTrendingSongs])
+
+  console.log(featuredSongs, trendingSongs, madeForYouSongs);
+  
+
+  return (
+    <div className="rounded-md overflow-hidden">
+      <Topbar />
+      <FeaturedSection/>
+    </div>
+  );
+};
+
+export default HomePage;
