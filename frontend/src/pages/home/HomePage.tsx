@@ -2,6 +2,7 @@ import Topbar from "@/components/ui/Topbar";
 import { useMusicStore } from "@/stores/useMusicStore";
 import { useEffect } from "react";
 import FeaturedSection from "./components/FeaturedSection";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 const HomePage = () => {
   const {
@@ -24,10 +25,22 @@ const HomePage = () => {
   
 
   return (
-    <div className="rounded-md overflow-hidden">
+    <main className="rounded-md overflow-hidden bg-gradient-to-b from-zinc-800  to-zinc-900">
       <Topbar />
-      <FeaturedSection/>
-    </div>
+      <ScrollArea className=" h-[calc(100vh - 180px)]">
+        <div className="p-4 sm:p-6">
+          <h1 className="text-2xl sm:text-3xl font-bold mb-6">
+            Good Afternoon
+          </h1>
+            <FeaturedSection/>
+        </div>
+        <div className="space-y-8">
+         <p>made for you </p>
+          <p>trending</p>
+        </div>
+      </ScrollArea>
+    
+    </ main >
   );
 };
 
