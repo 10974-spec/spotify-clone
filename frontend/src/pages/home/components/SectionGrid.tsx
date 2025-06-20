@@ -30,6 +30,7 @@ const SectionGrid = ({title, songs,isLoading}: SectionGridProps) => {
                             />
                         </div>
                    </div>
+                   <h3>{song.title} </h3>
                 </div>
             ))}
         </div>
